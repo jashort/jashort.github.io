@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learned the Hard Way on Eventually Consistent Opinions</title>
+    <link>https://jashort.github.io/categories/learned-the-hard-way/</link>
+    <description>Recent content in Learned the Hard Way on Eventually Consistent Opinions</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Jan 2026 19:20:30 -0700</lastBuildDate><atom:link href="https://jashort.github.io/categories/learned-the-hard-way/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Certificates in Docker Containers</title>
+      <link>https://jashort.github.io/the-hard-way/certificates-in-docker/</link>
+      <pubDate>Mon, 26 Jan 2026 19:20:30 -0700</pubDate>
+      
+      <guid>https://jashort.github.io/the-hard-way/certificates-in-docker/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;re using a minimal image, you might need to add ca-certificates:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Dockerfile&#34;&gt;FROM alpine AS certs
+RUN apk add --no-cache ca-certificates
+
+FROM scratch
+COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY my-go-binary /
+CMD [&amp;quot;/my-go-binary&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Joining Python Paths</title>
+      <link>https://jashort.github.io/the-hard-way/python-joining-directories/</link>
+      <pubDate>Tue, 26 Aug 2025 19:28:30 -0700</pubDate>
+      
+      <guid>https://jashort.github.io/the-hard-way/python-joining-directories/</guid>
+      <description>&lt;p&gt;Joining a directory with a leading slash doesn&amp;rsquo;t necessarily do what you&amp;rsquo;d think.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;other&amp;quot;)
+# &#39;/tmp/other&#39;
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;other&amp;quot;)
+# &#39;/tmp/other&#39;
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;/other&amp;quot;)
+# &#39;/other&#39;  (?!)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pathlib
+
+tmp = pathlib.Path(&amp;quot;/tmp&amp;quot;)
+other = pathlib.Path(&amp;quot;other&amp;quot;)
+tmp / other
+# PosixPath(&#39;/tmp/other&#39;)
+other = pathlib.Path(&amp;quot;/other&amp;quot;)
+tmp / other
+# PosixPath(&#39;/other&#39;)
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
