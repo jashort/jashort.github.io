@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Funny on Musings on Software Engineering</title><link>https://itdepends.github.io/categories/funny/</link><description>Recent content in Funny on Musings on Software Engineering</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 08 Feb 2026 13:41:30 -0700</lastBuildDate><atom:link href="https://itdepends.github.io/categories/funny/index.xml" rel="self" type="application/rss+xml"/><item><title>Scalability Analaysis</title><link>https://itdepends.github.io/p/scalability-analaysis/</link><pubDate>Sun, 08 Feb 2026 13:41:30 -0700</pubDate><guid>https://itdepends.github.io/p/scalability-analaysis/</guid><description>&lt;p&gt;Actual output from Claude Sonnet 4.5 today:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scalability Analysis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;10,000 entries over 5 years: ~200 entries/year = ~17 entries/month&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</description></item></channel></rss>
