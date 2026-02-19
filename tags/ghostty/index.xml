@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ghostty on Eventually Consistent Opinions</title><link>https://jashort.github.io/tags/ghostty/</link><description>Recent content in Ghostty on Eventually Consistent Opinions</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Feb 2026 13:13:22 -0700</lastBuildDate><atom:link href="https://jashort.github.io/tags/ghostty/index.xml" rel="self" type="application/rss+xml"/><item><title>Tmux and Copy to Clipboard</title><link>https://jashort.github.io/the-hard-way/tmux-copy/</link><pubDate>Mon, 16 Feb 2026 13:13:22 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/tmux-copy/</guid><description>&lt;p&gt;Problem: Automatic copy to clipboard doesn&amp;rsquo;t work&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When ssh&amp;rsquo;d to a remote server&lt;/li&gt;
+&lt;li&gt;Running &lt;code&gt;tmux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;From a Ghostty terminal window&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But does work:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When not running &lt;code&gt;tmux&lt;/code&gt;, everything else the same.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solution:
+On the remote server, update `~/.tmux.conf and add the line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;set -g allow-passthrough on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/anomalyco/opencode/issues/4283#issuecomment-3909686321"&gt;GitHub Issue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Tmux, Ghostty, and Shift-Enter</title><link>https://jashort.github.io/the-hard-way/tmux-ghostty-shift-enter/</link><pubDate>Sun, 15 Feb 2026 22:55:30 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/tmux-ghostty-shift-enter/</guid><description>&lt;p&gt;Problem: Shift-enter doesn&amp;rsquo;t work&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When ssh&amp;rsquo;d to a remote server&lt;/li&gt;
+&lt;li&gt;Running &lt;code&gt;tmux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;From a Ghostty terminal window&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But does work:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When not running &lt;code&gt;tmux&lt;/code&gt;, everything else the same.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solution:
+Update Ghostty settings and add the line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;keybind = shift+enter=text:\x1b\r
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the remote server, update `~/.tmux.conf and add the line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;set -s extended-keys on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/anomalyco/opencode/issues/1505#issuecomment-3388659338"&gt;GitHub Issue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

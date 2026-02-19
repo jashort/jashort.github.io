@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Eventually Consistent Opinions</title><link>https://jashort.github.io/tags/python/</link><description>Recent content in Python on Eventually Consistent Opinions</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 26 Aug 2025 19:28:30 -0700</lastBuildDate><atom:link href="https://jashort.github.io/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Joining Python Paths</title><link>https://jashort.github.io/the-hard-way/python-joining-directories/</link><pubDate>Tue, 26 Aug 2025 19:28:30 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/python-joining-directories/</guid><description>&lt;p&gt;Joining a directory with a leading slash doesn&amp;rsquo;t necessarily do what you&amp;rsquo;d think.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;other&amp;quot;)
+# '/tmp/other'
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;other&amp;quot;)
+# '/tmp/other'
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;/other&amp;quot;)
+# '/other' (?!)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import pathlib
+tmp = pathlib.Path(&amp;quot;/tmp&amp;quot;)
+other = pathlib.Path(&amp;quot;other&amp;quot;)
+tmp / other
+# PosixPath('/tmp/other')
+other = pathlib.Path(&amp;quot;/other&amp;quot;)
+tmp / other
+# PosixPath('/other')
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>

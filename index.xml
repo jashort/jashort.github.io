@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eventually Consistent Opinions</title><link>https://jashort.github.io/</link><description>Recent content on Eventually Consistent Opinions</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://jashort.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Tmux and Copy to Clipboard</title><link>https://jashort.github.io/the-hard-way/tmux-copy/</link><pubDate>Mon, 16 Feb 2026 13:13:22 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/tmux-copy/</guid><description>&lt;p&gt;Problem: Automatic copy to clipboard doesn&amp;rsquo;t work&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When ssh&amp;rsquo;d to a remote server&lt;/li&gt;
+&lt;li&gt;Running &lt;code&gt;tmux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;From a Ghostty terminal window&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But does work:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When not running &lt;code&gt;tmux&lt;/code&gt;, everything else the same.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solution:
+On the remote server, update `~/.tmux.conf and add the line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;set -g allow-passthrough on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/anomalyco/opencode/issues/4283#issuecomment-3909686321"&gt;GitHub Issue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Tmux, Ghostty, and Shift-Enter</title><link>https://jashort.github.io/the-hard-way/tmux-ghostty-shift-enter/</link><pubDate>Sun, 15 Feb 2026 22:55:30 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/tmux-ghostty-shift-enter/</guid><description>&lt;p&gt;Problem: Shift-enter doesn&amp;rsquo;t work&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When ssh&amp;rsquo;d to a remote server&lt;/li&gt;
+&lt;li&gt;Running &lt;code&gt;tmux&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;From a Ghostty terminal window&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But does work:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When not running &lt;code&gt;tmux&lt;/code&gt;, everything else the same.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Solution:
+Update Ghostty settings and add the line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;keybind = shift+enter=text:\x1b\r
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On the remote server, update `~/.tmux.conf and add the line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;set -s extended-keys on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;References:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/anomalyco/opencode/issues/1505#issuecomment-3388659338"&gt;GitHub Issue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Using AI for Scalability Analysis</title><link>https://jashort.github.io/funny/scalability-analysis/</link><pubDate>Sun, 08 Feb 2026 13:41:30 -0700</pubDate><guid>https://jashort.github.io/funny/scalability-analysis/</guid><description>&lt;p&gt;Actual output from Claude Sonnet 4.5 today:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Scalability Analysis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;10,000 entries over 5 years: ~200 entries/year = ~17 entries/month&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You would think that computers, being literal computers, would be better at math&amp;hellip;&lt;/p&gt;</description></item><item><title>Certificates in Docker Containers</title><link>https://jashort.github.io/the-hard-way/certificates-in-docker/</link><pubDate>Mon, 26 Jan 2026 19:20:30 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/certificates-in-docker/</guid><description>&lt;p&gt;If you&amp;rsquo;re using a minimal image, you might need to add ca-certificates:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-Dockerfile"&gt;FROM alpine AS certs
+RUN apk add --no-cache ca-certificates
+FROM scratch
+COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY my-go-binary /
+CMD [&amp;quot;/my-go-binary&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;</description></item><item><title>Joining Python Paths</title><link>https://jashort.github.io/the-hard-way/python-joining-directories/</link><pubDate>Tue, 26 Aug 2025 19:28:30 -0700</pubDate><guid>https://jashort.github.io/the-hard-way/python-joining-directories/</guid><description>&lt;p&gt;Joining a directory with a leading slash doesn&amp;rsquo;t necessarily do what you&amp;rsquo;d think.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import os
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;other&amp;quot;)
+# '/tmp/other'
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;other&amp;quot;)
+# '/tmp/other'
+os.path.join(&amp;quot;/tmp/&amp;quot;, &amp;quot;/other&amp;quot;)
+# '/other' (?!)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class="language-python"&gt;import pathlib
+tmp = pathlib.Path(&amp;quot;/tmp&amp;quot;)
+other = pathlib.Path(&amp;quot;other&amp;quot;)
+tmp / other
+# PosixPath('/tmp/other')
+other = pathlib.Path(&amp;quot;/other&amp;quot;)
+tmp / other
+# PosixPath('/other')
+&lt;/code&gt;&lt;/pre&gt;</description></item></channel></rss>
