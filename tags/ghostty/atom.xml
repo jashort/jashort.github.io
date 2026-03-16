@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://jashort.github.io/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;jashort.github.io</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>Ghostty</tabi:current_section>
+    </tabi:metadata><title>Eventually Consistent Opinions - Ghostty</title>
+        <subtitle>Reflections on Software Engineering</subtitle>
+    <link href="https://jashort.github.io/tags/ghostty/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://jashort.github.io/tags/ghostty/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-02-16T00:00:00+00:00</updated><id>https://jashort.github.io/tags/ghostty/atom.xml</id><entry xml:lang="en">
+        <title>Tmux and Copy to Clipboard</title>
+        <published>2026-02-16T00:00:00+00:00</published>
+        <updated>2026-02-16T00:00:00+00:00</updated>
+        <author>
+            <name>Jason Short</name>
+        </author>
+        <link rel="alternate" href="https://jashort.github.io/blog/tmux-copy/" type="text/html"/>
+        <id>https://jashort.github.io/blog/tmux-copy/</id>
+        
+            <content type="html">&lt;p&gt;Problem: Automatic copy to clipboard doesn’t work&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;When ssh’d to a remote server&lt;&#x2F;li&gt;
+&lt;li&gt;Running &lt;code&gt;tmux&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;From a Ghostty terminal window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;But does work:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;When not running &lt;code&gt;tmux&lt;&#x2F;code&gt;, everything else the same.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Solution:
+On the remote server, update `~&#x2F;.tmux.conf and add the line:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set -g allow-passthrough on&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;References:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;anomalyco&#x2F;opencode&#x2F;issues&#x2F;4283#issuecomment-3909686321&quot;&gt;GitHub Issue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        <summary type="html">Errors validating certificates when running inside a minimal Docker image?</summary>
+        </entry><entry xml:lang="en">
+        <title>Tmux, Ghostty, and Shift-Enter</title>
+        <published>2026-02-15T00:00:00+00:00</published>
+        <updated>2026-02-15T00:00:00+00:00</updated>
+        <author>
+            <name>Jason Short</name>
+        </author>
+        <link rel="alternate" href="https://jashort.github.io/blog/tmux-ghostty-shift-enter/" type="text/html"/>
+        <id>https://jashort.github.io/blog/tmux-ghostty-shift-enter/</id>
+        
+            <content type="html">&lt;p&gt;Problem: Shift-enter doesn’t work&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;When ssh’d to a remote server&lt;&#x2F;li&gt;
+&lt;li&gt;Running &lt;code&gt;tmux&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;From a Ghostty terminal window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;But does work:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;When not running &lt;code&gt;tmux&lt;&#x2F;code&gt;, everything else the same.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Solution:
+Update Ghostty settings and add the line:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;keybind = shift+enter=text:\x1b\r&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;On the remote server, update `~&#x2F;.tmux.conf and add the line:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;set -s extended-keys on&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;References:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;anomalyco&#x2F;opencode&#x2F;issues&#x2F;1505#issuecomment-3388659338&quot;&gt;GitHub Issue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        <summary type="html">Getting shift-enter working inside tmux</summary>
+        </entry>
+</feed>

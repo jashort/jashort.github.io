@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://jashort.github.io/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;jashort.github.io</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>Docker</tabi:current_section>
+    </tabi:metadata><title>Eventually Consistent Opinions - Docker</title>
+        <subtitle>Reflections on Software Engineering</subtitle>
+    <link href="https://jashort.github.io/tags/docker/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://jashort.github.io/tags/docker/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-26T00:00:00+00:00</updated><id>https://jashort.github.io/tags/docker/atom.xml</id><entry xml:lang="en">
+        <title>Certificates in Docker Containers</title>
+        <published>2026-01-26T00:00:00+00:00</published>
+        <updated>2026-01-26T00:00:00+00:00</updated>
+        <author>
+            <name>Jason Short</name>
+        </author>
+        <link rel="alternate" href="https://jashort.github.io/blog/certificates-in-docker/" type="text/html"/>
+        <id>https://jashort.github.io/blog/certificates-in-docker/</id>
+        
+            <content type="html">&lt;p&gt;If you’re using a minimal image, you might need to add ca-certificates:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;docker&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; alpine &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;AS&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; certs&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;RUN&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; apk add --no-cache ca-certificates&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;FROM&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; scratch&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; --from=certs &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;ca-certificates.crt &#x2F;etc&#x2F;ssl&#x2F;certs&#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;COPY&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; my-go-binary &#x2F;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;CMD&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; [&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;&#x2F;my-go-binary&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt;]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+        <summary type="html">Errors validating certificates when running inside a minimal Docker image?</summary>
+        </entry>
+</feed>

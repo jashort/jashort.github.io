@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://jashort.github.io/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;jashort.github.io</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>Git</tabi:current_section>
+    </tabi:metadata><title>Eventually Consistent Opinions - Git</title>
+        <subtitle>Reflections on Software Engineering</subtitle>
+    <link href="https://jashort.github.io/tags/git/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://jashort.github.io/tags/git/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-03-14T00:00:00+00:00</updated><id>https://jashort.github.io/tags/git/atom.xml</id><entry xml:lang="en">
+        <title>Git Committer Statistics</title>
+        <published>2026-03-14T00:00:00+00:00</published>
+        <updated>2026-03-14T00:00:00+00:00</updated>
+        <author>
+            <name>Jason Short</name>
+        </author>
+        <link rel="alternate" href="https://jashort.github.io/blog/git-committer-statistics/" type="text/html"/>
+        <id>https://jashort.github.io/blog/git-committer-statistics/</id>
+        
+            <content type="html">&lt;p&gt;A few options for getting committer statistics for a git repository:&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;print-lines-per-author-with-git-summary-command&quot;&gt;Print lines per author with &lt;code&gt;git summary&lt;&#x2F;code&gt; command&lt;&#x2F;h2&gt;
+&lt;p&gt;(from the &lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tj&#x2F;git-extras&#x2F;tree&#x2F;main&quot;&gt;git-extras&lt;&#x2F;a&gt; package: (&lt;code&gt;brew install git-extras&lt;&#x2F;code&gt; on macOS)&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;git&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; summary --line&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellsession&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt;project     :     test&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt;lines       :     1124&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt;authors     :&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt;  1103 Alice        98.1%&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt;    21 Bob           1.9%&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;print-number-of-commits-with-the-git-shortlog-command&quot;&gt;Print number of commits with the &lt;code&gt;git shortlog&lt;&#x2F;code&gt; command:&lt;&#x2F;h2&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;git&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; shortlog -s -n -c&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellsession&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt; 10  Alice&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-text&quot;&gt;  3  Bob&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+        <summary type="html">Show committer statistics for a git repository</summary>
+        </entry>
+</feed>
